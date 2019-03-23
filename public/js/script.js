@@ -20,9 +20,6 @@ jQuery(document).ready(function($) {
 		$.ajax({
 		  	type: 'POST',
 				url: '/ajax',
-				headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				},
 		  	data: {
 		  		source_url: $('input[name="source_url"]').val(),
 		  		action: 'get_download_link',
@@ -84,10 +81,7 @@ jQuery(document).ready(function($) {
 
 		    $.ajax({
 				type: 'POST',
-				headers: {
-					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-				},
-				url: document.URL,
+				url: '/mail',
 				data: datastring,
 				cache: false,
 				success: function(response){

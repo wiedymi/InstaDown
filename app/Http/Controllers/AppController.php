@@ -18,7 +18,7 @@ class AppController extends Controller
         $url = $request->source_url;
             
         try {
-        $client = new InstagramDownload($url);
+        $client = new \WiedyMi\InstagramDownload($url);
         $url = $client->getDownloadUrl(); // Returns the download URL.
         $type = $client->getType(); // Returns "image" or "video" depending on the media type.
         }
